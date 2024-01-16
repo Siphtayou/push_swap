@@ -6,7 +6,7 @@
 #    By: agilles <agilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:34:53 by agilles           #+#    #+#              #
-#    Updated: 2024/01/15 17:16:05 by agilles          ###   ########.fr        #
+#    Updated: 2024/01/16 16:40:06 by agilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,29 @@ NAME = printf_libft.a
 LIBFT = printf_libft/libftprintf.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-SRC = ft_ope.c
+SRC = 	src_lst/ft_lstadd_back.c\
+		src_lst/ft_lstadd_front.c\
+		src_lst/ft_lstlast.c\
+		src_lst/ft_lstnew.c\
+		src_lst/ft_lstfree.c\
+		ft_ope.c\
+
+
 MAIN = main.c\
 
 OBJ = $(SRC:.c=.o)
 
 all : $(EXEC)
+	mv a.out $(EXEC)
 
 clean :
 	rm -f $(OBJ)
+	$(MAKE) clean -C $$(dirname $(LIBFT))
 
 fclean : clean
 	rm -f $(NAME)
+	rm -f $(EXEC)
+	$(MAKE) fclean -C $$(dirname $(LIBFT))
 
 re : fclean all
 
@@ -36,7 +47,7 @@ $(LIBFT) :
 %.o : %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME) : $(OBJ) $(LIB)
+$(NAME) : $(OBJ) $(LIBFT)
 	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJ)
 

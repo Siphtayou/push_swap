@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ope.c                                           :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/16 15:52:48 by agilles          ###   ########.fr       */
+/*   Created: 2024/01/16 16:34:42 by agilles           #+#    #+#             */
+/*   Updated: 2024/01/16 16:55:53 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_ra(t_list *a, int i)
+void	ft_lstfree(t_list *lst)
 {
-	t_list *tmp;
+	t_list	*current;
+	t_list	*next;
 
-	tmp = a;
-	while (tmp->next)
+	current = lst;
+	while (current)
 	{
-		//printf("Content : %d\n", lst->content);
-		tmp = tmp->next;
+		next = current->next;
+		free(current);
+		current = next;
 	}
-	a->next = tmp;
-	if (i == 1)
-		ft_printf("ra\n");
 }

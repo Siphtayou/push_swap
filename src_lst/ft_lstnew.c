@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ope.c                                           :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/16 15:52:48 by agilles          ###   ########.fr       */
+/*   Created: 2023/10/26 14:58:08 by agilles           #+#    #+#             */
+/*   Updated: 2024/01/16 16:05:23 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_ra(t_list *a, int i)
+t_list	*ft_lstnew(int content)
 {
-	t_list *tmp;
+	t_list	*liste;
 
-	tmp = a;
-	while (tmp->next)
-	{
-		//printf("Content : %d\n", lst->content);
-		tmp = tmp->next;
-	}
-	a->next = tmp;
-	if (i == 1)
-		ft_printf("ra\n");
+	liste = malloc(sizeof(t_list));
+	if (!liste)
+		return (0);
+	liste->content = content;
+	liste->next = 0;
+	return (liste);
 }

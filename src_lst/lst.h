@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ope.c                                           :+:      :+:    :+:   */
+/*   lst.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/16 15:52:48 by agilles          ###   ########.fr       */
+/*   Created: 2024/01/16 15:58:29 by agilles           #+#    #+#             */
+/*   Updated: 2024/01/16 16:56:09 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_ra(t_list *a, int i)
+typedef struct s_list
 {
-	t_list *tmp;
+	struct	s_list	*next;
+	int				content;
+	int				index;
+}					t_list;
 
-	tmp = a;
-	while (tmp->next)
-	{
-		//printf("Content : %d\n", lst->content);
-		tmp = tmp->next;
-	}
-	a->next = tmp;
-	if (i == 1)
-		ft_printf("ra\n");
-}
+typedef struct s_stack
+{
+	t_list	*a;
+	t_list	*b;
+}			t_stack;
+
+void	ft_lstfree(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(int content);

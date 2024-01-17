@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:58:29 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/16 16:56:09 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/17 15:38:35 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 	t_list	*b;
 }			t_stack;
 
-void	ft_lstfree(t_list *lst);
+void	ft_lstfree(t_list *lst, char **argv, int argc);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);

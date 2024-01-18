@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:13:07 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/18 15:08:39 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:39:00 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int main(int argc, char **argv)
 			i++;
 		}
 		t_stack tmp;
-		ft_sa(stack.a, 1);
+		ft_ra(stack.a, 1);
 		tmp = stack;
-		/*while (tmp.a->next)
+		while (tmp.a->next)
 		{
 			ft_printf("%d\n", tmp.a->content);
 			tmp.a = tmp.a->next;
 		}
-		ft_printf("%d\n", tmp.a->content);*/
+		ft_printf("%d\n", tmp.a->content);
 		ft_lstfree(stack.a, argv, argc);
 	return (0);
 }

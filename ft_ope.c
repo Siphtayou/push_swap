@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/18 16:16:28 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/22 17:03:27 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,50 @@ void	ft_ra(t_list *a, int i)
 
 	tmp = a;
 	while (tmp->next)
+	{
 		tmp = tmp->next;
+	}
 	tmp->next = a;
 	tmp = a;
-	tmp->next = NULL;
 	a = a->next;
+	tmp->next = NULL;
 	if (i == 1)
 		ft_printf("ra\n");
 	else if (i == 2)
 		ft_printf("rb\n");
-	//a fix
 }
 
-void	ft_rra(t_stack stack, int i)
+t_list	*ft_rra(t_list *a, int i)
 {
-	//func
+	t_list	*tmp;
+	t_list	*front;
+
+	tmp = a;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	front = tmp->next;
+	front->next = a;
+	tmp->next = NULL;
+	return (front);
+	if (i == 1)
+		ft_printf("rra\n");
+	else if (i == 2)
+		ft_printf("rrb\n");
 }
 
 void	ft_pa(t_stack *stack, int i)
 {
 	t_list *tmp;
 
-	tmp = stack->a->next;
-	stack->a->next = stack->b;
-	stack->b = stack->a->next;
-	stack->a->next = tmp;
-	//non fini dutout
+	i = 0;
+	tmp = stack->a;
+	stack->a = stack->a->next;
+	tmp->next = stack->b;
+	stack->b = tmp;
+	if (i == 1)
+		ft_printf("pa\n");
+	else if (i == 2)
+		ft_printf("pb\n");
 }
 
 void	ft_sa(t_list *a, int i)

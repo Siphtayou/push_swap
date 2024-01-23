@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:13:07 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/22 17:02:34 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/23 16:52:31 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,23 @@ int main(int argc, char **argv)
 			}
 			i++;
 		}
-		t_list *tmp;
-		ft_pa(&stack, 1);
-		tmp = stack.a;
+
+		/*t_list *tmp;
+		tmp = ps_three(stack.a);
 		while (tmp->next)
 		{
 			ft_printf("%d\n", tmp->content);
 			tmp = tmp->next;
 		}
-		ft_printf("%d\n", tmp->content);
+		ft_printf("%d\n", tmp->content);*/
+		t_stack *tmp;
+		tmp = ps_five(&stack);
+		while (tmp->a->next)
+		{
+			ft_printf("%d\n", tmp->a->content);
+			tmp->a = tmp->a->next;
+		}
+		ft_printf("%d\n", tmp->a->content);
 		ft_lstfree(stack.a, argv, argc);
 	return (0);
 }

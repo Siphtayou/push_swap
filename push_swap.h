@@ -6,28 +6,31 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:54:25 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/22 17:01:39 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/23 16:34:40 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "printf_libft/ft_printf.h"
-#include "src_lst/lst.h"
 #include <stdlib.h>
 #include <limits.h>
+#include "printf_libft/ft_printf.h"
+#include "src_lst/lst.h"
 
 int	dup_err(t_list *stack, char *nb);
 int	nnb_err(char *nb);
 int	lim_err(char *nb);
 
-void	ft_sa(t_list *a, int i);
-void	ft_pa(t_stack *stack, int i);
-void	ft_ra(t_list *a, int i);
+t_stack	*ft_pa(t_stack *stack);
+t_stack	*ft_pb(t_stack *stack);
+t_list	*ft_sa(t_list *a, int i);
+t_list	*ft_ra(t_list *a, int i);
 t_list	*ft_rra(t_list *a, int i);
 void	ft_ss(t_stack *stack);
 void	ft_rr(t_stack *stack);
 
+t_list	*ps_three(t_list *stack);
+t_stack	*ps_five(t_stack *stack);
 
 #endif

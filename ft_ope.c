@@ -6,13 +6,13 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/22 17:03:27 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/23 16:44:56 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ra(t_list *a, int i)
+t_list	*ft_ra(t_list *a, int i)
 {
 	t_list *tmp;
 
@@ -29,6 +29,7 @@ void	ft_ra(t_list *a, int i)
 		ft_printf("ra\n");
 	else if (i == 2)
 		ft_printf("rb\n");
+	return (a);
 }
 
 t_list	*ft_rra(t_list *a, int i)
@@ -42,29 +43,38 @@ t_list	*ft_rra(t_list *a, int i)
 	front = tmp->next;
 	front->next = a;
 	tmp->next = NULL;
-	return (front);
 	if (i == 1)
 		ft_printf("rra\n");
 	else if (i == 2)
 		ft_printf("rrb\n");
+	return (front);
 }
 
-void	ft_pa(t_stack *stack, int i)
+t_stack	*ft_pb(t_stack *stack)
 {
 	t_list *tmp;
 
-	i = 0;
 	tmp = stack->a;
 	stack->a = stack->a->next;
 	tmp->next = stack->b;
 	stack->b = tmp;
-	if (i == 1)
-		ft_printf("pa\n");
-	else if (i == 2)
-		ft_printf("pb\n");
+	ft_printf("pb\n");
+	return (stack);
 }
 
-void	ft_sa(t_list *a, int i)
+t_stack	*ft_pa(t_stack *stack)
+{
+	t_list *tmp;
+
+	tmp = stack->b;
+	stack->b = stack->b->next;
+	tmp->next = stack->a;
+	stack->a = tmp;
+	ft_printf("pa\n");
+	return (stack);
+}
+
+t_list	*ft_sa(t_list *a, int i)
 {
 	int		swap;
 
@@ -75,6 +85,7 @@ void	ft_sa(t_list *a, int i)
 		ft_printf("sa\n");
 	else if (i == 2)
 		ft_printf("sb\n");
+	return (a);
 }
 
 void	ft_ss(t_stack *stack)

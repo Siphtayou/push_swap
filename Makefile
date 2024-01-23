@@ -6,7 +6,7 @@
 #    By: agilles <agilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:34:53 by agilles           #+#    #+#              #
-#    Updated: 2024/01/17 15:16:36 by agilles          ###   ########.fr        #
+#    Updated: 2024/01/23 15:17:05 by agilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC = 	src_lst/ft_lstadd_back.c\
 		src_lst/ft_lstfree.c\
 		ft_ope.c\
 		error.c\
+		algo.c\
 
 
 MAIN = main.c\

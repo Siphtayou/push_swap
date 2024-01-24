@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:00:55 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/23 17:06:51 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/24 17:31:58 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,40 @@ t_stack	*ps_five(t_stack *stack)
 	stack->a = ft_ra(stack->a, 1);
 	ft_pa(stack);
 	return (stack);
+}
+
+int		ps_findmin(t_list *stack)
+{
+	t_list	*tmp;
+	t_list	*min;
+
+	tmp = stack;
+	min = tmp;
+	while	(tmp->next)
+	{
+		if (min->content > tmp->content)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	if (min->content > tmp->content)
+		min = tmp;
+	return (min);
+}
+
+t_list	*ps_findmax(t_list *stack)
+{
+	t_list	*tmp;
+	t_list	*max;
+
+	tmp = stack;
+	max = tmp;
+	while	(tmp->next)
+	{
+		if (max->content < tmp->content)
+			max = tmp;
+		tmp = tmp->next;
+	}
+	if (max->content < tmp->content)
+		max = tmp->content;
+	return (max);
 }

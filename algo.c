@@ -6,11 +6,18 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:00:55 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/26 15:06:07 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:44:01 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ps_two(t_list *stack)
+{
+	if (stack->next->content < stack->content)
+		stack = ft_ra(stack);
+	return (stack);
+}
 
 t_list	*ps_three(t_list *stack)
 {

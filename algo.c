@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:00:55 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/25 15:29:31 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:06:07 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,19 @@ t_list	*ps_three(t_list *stack)
 	return (stack);
 }
 
+t_stack	*ps_four(t_stack *stack)
+{
+	stack->a = ps_moveto(stack->a, ps_findmin(stack->a), 4);
+	stack = ft_pb(stack);
+	stack->a = ps_three(stack->a);
+	stack = ft_pa(stack);
+	return (stack);
+}
+
 t_stack	*ps_five(t_stack *stack)
 {
 	stack->a = ps_moveto(stack->a, ps_findmin(stack->a), 5);
 	stack = ft_pb(stack);
-	ft_printf("first : %d\n", stack->a->content);
 	stack->a = ps_moveto(stack->a, ps_findmax(stack->a), 4);
 	stack = ft_pb(stack);
 	stack->a = ps_three(stack->a);
@@ -69,7 +77,6 @@ t_list	*ps_findmin(t_list *stack)
 	}
 	if (min->content > tmp->content)
 		min = tmp;
-	ft_printf("min : %d\n", min->content);
 	return (min);
 }
 
@@ -88,7 +95,6 @@ t_list	*ps_findmax(t_list *stack)
 	}
 	if (max->content < tmp->content)
 		max = tmp;
-	ft_printf("max : %d\n", max->content);
 	return (max);
 }
 
@@ -104,10 +110,9 @@ t_list	*ps_moveto(t_list *start, t_list *obj, int i)
 		ra++;
 		tmp = tmp->next;
 	}
-	ft_printf("ra : %d\n", ra); // 1 4 3 2 5 a test
 	if (ra >= i - 2)
 	{
-		while (ra < 5)
+		while (ra < i)
 		{
 			start = ft_rra(start, 1);
 			ra++;

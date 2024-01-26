@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:13:07 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/25 14:54:36 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:04:32 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 		}
 		ft_printf("%d\n", tmp->content);*/
 		t_stack *tmp;
-		tmp = ps_five(&stack);
+		tmp = ps_four(&stack);
 		while (tmp->a->next)
 		{
 			ft_printf("%d\n", tmp->a->content);

@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:54:25 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/25 15:23:54 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:04:22 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_ss(t_stack *stack);
 void	ft_rr(t_stack *stack);
 
 t_list	*ps_three(t_list *stack);
+t_stack	*ps_four(t_stack *stack);
 t_stack	*ps_five(t_stack *stack);
 
 #endif

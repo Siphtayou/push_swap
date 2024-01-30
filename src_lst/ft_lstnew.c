@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:58:08 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/16 16:05:23 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/30 16:33:48 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!liste)
 		return (0);
 	liste->content = content;
+	liste->index = 0;
 	liste->next = 0;
 	return (liste);
 }

@@ -6,11 +6,11 @@
 #    By: agilles <agilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:34:53 by agilles           #+#    #+#              #
-#    Updated: 2024/01/23 15:17:05 by agilles          ###   ########.fr        #
+#    Updated: 2024/01/30 15:25:17 by agilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = push_swap.out
+EXEC = push_swap
 NAME = printf_libft.a
 LIBFT = printf_libft/libftprintf.a
 CC = cc

@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:13:07 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/30 16:59:29 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:33:06 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ int main(int argc, char **argv)
 			i++;
 		}
 		ps_init_index(stack.a);
-		//t_stack *tmp;
-		//tmp = ps_fiveplus(&stack);
-		t_list *tmp;
-		tmp = stack.a;
-		//tmp = ps_five(&stack);
-		while (tmp->next)
+		ft_lstfree(stack.a, argv, argc);
+	return (0);
+}
+		//some print test
+
+		/*t_stack *tmp;
+		//t_list *tmp;
+		//tmp = stack.a;
+		tmp = ps_fiveplus(&stack);
+		/*while (tmp->next)
 		{
 			ft_printf("content : %d ", tmp->content);
 			ft_printf("index : %d\n", tmp->index);
@@ -58,8 +62,8 @@ int main(int argc, char **argv)
 		}
 		ft_printf("content : %d ", tmp->content);
 		ft_printf("index : %d\n", tmp->index);
-		/*t_stack *tmp;
-		tmp = ps_fiveplus(&stack);
+		//t_stack *tmp;
+		//tmp = ps_fiveplus(&stack);
 		//tmp = ps_five(&stack);
 		while (tmp->a->next)
 		{
@@ -67,6 +71,3 @@ int main(int argc, char **argv)
 			tmp->a = tmp->a->next;
 		}
 		ft_printf("%d\n", tmp->a->content);*/
-		ft_lstfree(stack.a, argv, argc);
-	return (0);
-}

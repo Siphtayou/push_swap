@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:54:25 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/30 16:59:13 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:34:19 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ t_list	*ps_two(t_list *stack);
 t_list	*ps_three(t_list *stack);
 t_stack	*ps_four(t_stack *stack);
 t_stack	*ps_five(t_stack *stack);
-t_stack	*ps_fiveplus(t_stack *stack);
+void	ps_fiveplus(t_stack *stack);
+
+void	test_ra(t_stack *stack, int i);
+void	test_pb(t_stack *stack);
+void	test_pa(t_stack *stack);
 
 #endif

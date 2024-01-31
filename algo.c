@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:00:55 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/30 16:59:06 by agilles          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:33:57 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,54 +161,53 @@ int		ps_stacklen(t_list *stack)
 	//return (0);
 }
 
-t_stack	*ps_fiveplus(t_stack *stack)
+void	ps_fiveplus(t_stack *stack)
 {
+	t_list *a;
+	int	max_bits;
 	int	len;
+	int	i;
+	int	j;
 
 	len = ps_stacklen(stack->a);
-	//ft_printf("len.a : %d\n", len);
-	len--;
-	while (ps_stacklen(stack->a) != 1)
+	max_bits = 0;
+	while ((len - 1) >> max_bits != 0)
+		max_bits++;
+	i = -1;
+	while (++i < max_bits)
 	{
-		stack->a = ps_moveto(stack->a, ps_findmin(stack->a), len);
-		stack = ft_pb(stack);
-		len--;
+		j = -1;
+		while (++j < len)
+		{
+			a = stack->a;
+			if (((a->index >> i) & 1) == 1)
+				stack->a = ft_ra(a, 1);
+			else
+				stack = ft_pb(stack);
+		}
+		while (stack->b)
+			stack = ft_pa(stack);
 	}
-	len = ps_stacklen(stack->b);
-	//ft_printf("len.b : %d\n", len);
-	while (len != 0)
-	{
-		stack = ft_pa(stack);
-		len--;
-	}
-	return (stack);
 }
 
 void	ps_init_index(t_list *stack)
 {
-	t_list	*tmp;
-	t_list	*min;
+	t_list	*a;
+	t_list	*b;
 	int		i;
 
-	i = -1;
-	tmp = stack;
-	min = tmp;
-	while (ps_stacklen(stack) >= ++i)
+	a = stack;
+	while (a != NULL)
 	{
-		while	(tmp->next)
+		b = stack;
+		i = 0;
+		while (b != NULL)
 		{
-			if (min->content > tmp->content && tmp->index == 0)
-				min = tmp;
-			tmp = tmp->next;
+			if (a->content > b->content)
+				i++;
+			b = b->next;
 		}
-		if (min->content > tmp->content && tmp->index == 0)
-			min = tmp;
-		min->index = i;
-		tmp = stack;
-		while (tmp->index != 0)
-			tmp = tmp->next;
-		min = tmp;
-		ft_printf("tmp/min content : %d\n", tmp->content);
-		tmp = stack;
+		a->index = i;
+		a = a->next;
 	}
 }

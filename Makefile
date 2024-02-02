@@ -6,7 +6,7 @@
 #    By: agilles <agilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:34:53 by agilles           #+#    #+#              #
-#    Updated: 2024/02/02 14:20:17 by agilles          ###   ########.fr        #
+#    Updated: 2024/02/02 14:30:46 by agilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = 	src_lst/ft_lstadd_back.c\
 		ft_ope.c\
 		error.c\
 		algo.c\
+		algo_2.c\
 		double_op.c\
 		utils.c\
 

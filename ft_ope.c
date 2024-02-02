@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/23 16:44:56 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/02 14:19:32 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,3 @@ t_list	*ft_sa(t_list *a, int i)
 	return (a);
 }
 
-void	ft_ss(t_stack *stack)
-{
-	ft_sa(stack->a, 0);
-	ft_sa(stack->b, 0);
-	ft_printf("ss\n");
-}
-
-void	ft_rr(t_stack *stack)
-{
-	ft_ra(stack->a, 0);
-	ft_ra(stack->b, 0);
-	ft_printf("ss\n");
-}

@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:13:07 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/31 16:33:06 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/02 14:24:46 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int main(int argc, char **argv)
 			i++;
 		}
 		ps_init_index(stack.a);
+		sort(&stack);
 		ft_lstfree(stack.a, argv, argc);
 	return (0);
 }

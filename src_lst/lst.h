@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:58:29 by agilles           #+#    #+#             */
-/*   Updated: 2024/01/17 15:38:35 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/06 16:37:41 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 typedef struct s_list
 {
-	struct	s_list	*next;
+	struct s_list	*next;
 	int				content;
 	int				index;
 }					t_list;

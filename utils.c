@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:18:16 by agilles           #+#    #+#             */
-/*   Updated: 2024/02/06 14:50:03 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/06 16:43:58 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ps_findmin(t_list *stack)
 
 	tmp = stack;
 	min = tmp;
-	while	(tmp->next)
+	while (tmp->next)
 	{
 		if (min->content > tmp->content)
 			min = tmp;
@@ -37,7 +37,7 @@ t_list	*ps_findmax(t_list *stack)
 
 	tmp = stack;
 	max = tmp;
-	while	(tmp->next)
+	while (tmp->next)
 	{
 		if (max->content < tmp->content)
 			max = tmp;
@@ -48,12 +48,10 @@ t_list	*ps_findmax(t_list *stack)
 	return (max);
 }
 
-t_list	*ps_moveto(t_list *start, t_list *obj, int i)
+t_list	*ps_moveto(t_list *start, t_list *obj, int i, int ra)
 {
 	t_list	*tmp;
-	int		ra;
 
-	ra = 0;
 	tmp = start;
 	while (tmp != obj)
 	{
@@ -69,15 +67,17 @@ t_list	*ps_moveto(t_list *start, t_list *obj, int i)
 		}
 	}
 	else
+	{
 		while (ra > 0)
 		{
 			start = ft_ra(start, 1);
 			ra--;
 		}
+	}
 	return (start);
 }
 
-int		ps_stacklen(t_list *stack)
+int	ps_stacklen(t_list *stack)
 {
 	t_list	*tmp;
 	int		len;
@@ -90,16 +90,6 @@ int		ps_stacklen(t_list *stack)
 		tmp = tmp->next;
 	}
 	len++;
-	/*if (len == 2)
-		stack = ps_two(stack);
-	else if (len == 3)
-		stack = ps_three(stack);
-	else if (len == 4)
-		stack = ps_four(stack);
-	else if (len == 5)
-		stack = ps_five(stack);
-	else
-		return (len);*/
 	return (len);
 }
 

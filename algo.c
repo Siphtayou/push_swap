@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:00:55 by agilles           #+#    #+#             */
-/*   Updated: 2024/02/06 14:48:01 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/06 16:46:20 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_list	*ps_three(t_list *stack)
 
 t_stack	*ps_four(t_stack *stack)
 {
-	stack->a = ps_moveto(stack->a, ps_findmin(stack->a), 4);
+	stack->a = ps_moveto(stack->a, ps_findmin(stack->a), 4, 0);
 	stack = ft_pb(stack);
 	stack->a = ps_three(stack->a);
 	stack = ft_pa(stack);
@@ -58,9 +58,14 @@ t_stack	*ps_four(t_stack *stack)
 
 t_stack	*ps_five(t_stack *stack)
 {
-	stack->a = ps_moveto(stack->a, ps_findmin(stack->a), ps_stacklen(stack->a));
+	t_list	*min;
+	t_list	*max;
+
+	min = ps_findmin(stack->a);
+	max = ps_findmax(stack->a);
+	stack->a = ps_moveto(stack->a, min, ps_stacklen(stack->a), 0);
 	stack = ft_pb(stack);
-	stack->a = ps_moveto(stack->a, ps_findmax(stack->a), ps_stacklen(stack->a));
+	stack->a = ps_moveto(stack->a, max, ps_stacklen(stack->a), 0);
 	stack = ft_pb(stack);
 	stack->a = ps_three(stack->a);
 	ft_pa(stack);
@@ -69,19 +74,16 @@ t_stack	*ps_five(t_stack *stack)
 	return (stack);
 }
 
-void	ps_fiveplus(t_stack *stack)
+void	ps_fiveplus(t_stack *stack, int i, int j)
 {
-	t_list *a;
-	int	max_bits;
-	int	len;
-	int	i;
-	int	j;
+	t_list	*a;
+	int		max_bits;
+	int		len;
 
 	len = ps_stacklen(stack->a);
 	max_bits = 0;
 	while ((len - 1) >> max_bits != 0)
 		max_bits++;
-	i = -1;
 	while (++i < max_bits)
 	{
 		j = -1;

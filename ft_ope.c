@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:14:09 by agilles           #+#    #+#             */
-/*   Updated: 2024/02/02 14:19:32 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/06 16:47:08 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_ra(t_list *a, int i)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = a;
 	while (tmp->next)
@@ -52,7 +52,7 @@ t_list	*ft_rra(t_list *a, int i)
 
 t_stack	*ft_pb(t_stack *stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = stack->a;
 	stack->a = stack->a->next;
@@ -64,7 +64,7 @@ t_stack	*ft_pb(t_stack *stack)
 
 t_stack	*ft_pa(t_stack *stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = stack->b;
 	stack->b = stack->b->next;
@@ -87,4 +87,3 @@ t_list	*ft_sa(t_list *a, int i)
 		ft_printf("sb\n");
 	return (a);
 }
-

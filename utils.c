@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:18:16 by agilles           #+#    #+#             */
-/*   Updated: 2024/02/02 14:18:32 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/06 14:50:03 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_list	*ps_moveto(t_list *start, t_list *obj, int i)
 	}
 	if (ra >= i / 2)
 	{
-		while (ra < i + 1)
+		while (ra < i)
 		{
 			start = ft_rra(start, 1);
 			ra++;

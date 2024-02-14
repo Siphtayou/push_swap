@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:21:32 by agilles           #+#    #+#             */
-/*   Updated: 2024/02/06 16:36:28 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/08 15:20:10 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ps_sort(t_stack *stack)
 	int		len;
 
 	len = ps_stacklen(stack->a);
-	if (len == 2)
+	if (all_good(stack->a))
+		return ;
+	else if (len == 2)
 		stack->a = ps_two(stack->a);
 	else if (len == 3)
 		stack->a = ps_three(stack->a);
@@ -47,4 +49,24 @@ t_stack	ps_init_stack(int argc, char **argv, int i) //10 52 78 45 8
 		i++;
 	}
 	return (stack);
+}
+
+int	all_good(t_list *a)
+{
+	t_list	*tmp;
+	int		content;
+
+	content = a->content;
+	tmp = a->next;
+	while (tmp)
+	{
+		if (content < tmp->content)
+		{
+			content = tmp->content;
+			tmp = tmp->next;
+		}
+		else
+			return (0);
+	}
+	return (1);
 }

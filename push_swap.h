@@ -6,7 +6,7 @@
 /*   By: agilles <agilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:54:25 by agilles           #+#    #+#             */
-/*   Updated: 2024/02/06 16:47:29 by agilles          ###   ########.fr       */
+/*   Updated: 2024/02/08 15:20:40 by agilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		dup_err(t_list *stack, char *nb);
 int		nnb_err(char *nb);
 int		lim_err(char *nb);
 int		ps_stacklen(t_list *stack);
+int		all_good(t_list *a);
 
 #endif
